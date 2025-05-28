@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <title>Project one</title>
+    </head>
+    <body>
+        <div id="app">
+            {{message()}}
+            <br>
+            {{messageAfn()}}
+            <br>
+            {{welcome()}}
+        </div>
+    </body>
+    <script>
+        const { createApp } = Vue;
+        createApp({
+            setup(){
+                // Define a method using a function expression
+                const messageAfn = () => {
+                    return 'Hello, this is a message from a function';
+                }
+
+                // Define a method using a regular function
+                // This method can also be called in the template
+                function message(){
+                    return 'Message from function'
+                }
+
+                return {
+                    message,messageAfn
+                }
+            },
+            // Define a method using the methods option (API Option)
+            methods: {
+                welcome() {
+                    return 'Welcome to Vue 3!';
+                }
+            }
+        }).mount('#app')
+    </script>
+</html>
