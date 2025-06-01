@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <title>Project one</title>
+    </head>
+    <body>
+        <div id="app">
+           <p v-if="user.age < user.allowedAge">
+                You are not old enough
+           </p>
+           <p v-else-if="checkUser">
+                Welcome back francis
+           </p>
+           <p v-else>
+                You are not allowed
+           </p>
+           <hr/>
+           <p v-show="true">
+                Show it
+           </p>
+           <p v-show="false">
+                Don't show it
+            </p>
+        </div>
+    </body>
+    <script>
+        const { createApp, ref } = Vue;
+        createApp({
+            setup(){
+                const user = ref({
+                    name:'Francis',
+                    age:20,
+                    allowedAge:18
+                });
+
+                function checkUser(){
+                    return user.name === 'Francis' ? true : false
+                }
+
+                return { user, checkUser }
+            }
+        }).mount('#app')
+    </script>
+</html>
