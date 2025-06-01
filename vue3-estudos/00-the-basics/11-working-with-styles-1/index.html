@@ -10,17 +10,11 @@
     </head>
     <body>
         <div id="app">
-            <div class="element" 
-                v-bind:class="[
-                    colors.blueClass.active ? colors.blueClass.name : '',
-                    colors.redClass.active ? colors.redClass.name : ''
-                ]"
-                v-bind:style="colors.newStyle"
-            >
+            <div class="element" v-bind:class="colors">
                 This is my element
             </div>
             <hr/>
-            <div v-on:click="colors.redClass.active = !colors.redClass.active,colors.newStyle.fontSize = '150px'">
+            <div v-on:click="colors.red = !colors.red">
                 Activate red
             </div>
         </div>
@@ -30,18 +24,8 @@
         createApp({
             setup(){
                 const colors = ref({
-                    blueClass:{
-                        name:'blue',
-                        active:true
-                    },
-                    redClass:{
-                        name:'red',
-                        active:false
-                    },
-                    newStyle:{
-                        fontSize:'50px',
-                        border:'5px solid green'
-                    }
+                    blue:true,
+                    red:true
                 });
                 return { colors }
             }
