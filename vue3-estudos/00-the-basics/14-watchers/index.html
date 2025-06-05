@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <title>Project one</title>
+        
+    </head>
+    <body>
+        <div id="app">
+            <div>Count:{{ count.number }}</div>
+            <button v-on:click="count.number++">Other action</button>
+        </div>
+    </body>
+    <script>
+        const { createApp, ref, watch, reactive } = Vue;
+        createApp({
+            setup(){
+                const count = reactive({
+                    number:0,
+                    other:'Other prop'
+                });
+
+                watch(()=>[count.number,count.other],(newCount,oldCount)=>{
+                    console.log(newCount,'New');
+                    console.log(oldCount,'Old');
+                   // console.log(`New is ${newCount}, but old is ${oldCount}`)
+                })
+                return { count }
+            }
+        }).mount('#app')
+    </script>
+</html>
