@@ -1,0 +1,57 @@
+/* 1 - Seletores básicos
+
+Tipo: seleciona pelo nome da tag.*/
+
+
+
+
+
+/* 2 - Classe (.nome): seleciona elementos que possuem uma classe específica. */
+
+
+
+
+/* 3 - ID (#nome): seleciona um único elemento com o atributo id. */
+
+
+
+/* 4 - Seletores de agrupamento
+Permitem aplicar a mesma regra a vários seletores: */
+
+
+
+/* 5 -  Seletores de descendência e relacionamento
+Descendente:*/
+
+
+
+
+/* 6 - Filho direto (>): */
+
+
+
+
+/* 7 - Adjacente (+): */
+
+
+
+
+/* 8 - Irmão geral (~):*/
+
+
+
+
+/* 9 -  Seletores de atributo
+Baseados em atributos HTML: */
+
+
+
+
+/* 10. Pseudo-classes
+Selecionam estados ou condições especiais: */
+
+
+
+
+/* 11. Pseudo-elementos
+Estilizam partes específicas de um elemento: */

@@ -1,0 +1,19 @@
+.container {
+	width: 500px;
+	border: 2px solid #333;
+	padding: 10px;
+	text-align: center; /* Centraliza os cards inline-block */
+}
+
+.card {
+	width: 120px; /* Agora width funciona! */
+	height: 100px; /* Agora height funciona! */
+	background-color: #9b59b6;
+	color: white;
+	padding: 20px;
+	margin: 10px; /* Margin funciona em todas as direções */
+	text-align: center;
+	vertical-align: top; /* Alinha pelo topo */
+	box-sizing: border-box; /* Inclui padding no cálculo do width */
+    display: none; /* Permite que os cards fiquem lado a lado */
+}
