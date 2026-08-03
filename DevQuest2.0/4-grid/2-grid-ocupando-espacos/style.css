@@ -1,0 +1,72 @@
+.laranja {
+  background-color: #B25954;
+}
+
+.marrom {
+  background-color: #766A67;
+}
+
+.verde-claro {
+  background-color: #309C8B;
+}
+
+.verde-escuro{
+  background-color: #35636C;
+}
+
+.azul {
+  background-color: #43ABC0;
+}
+
+.rosa {
+  background-color: #C55BA3;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-template-rows: repeat(3, auto);
+  gap: 15px;
+}
+
+/* Utilizando grid-column e grid-row  */
+
+.laranja{
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+
+ /* forma compacta  */
+
+.verde-claro{
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+}
+
+/* forma compacta com a propriedade span */
+
+.rosa{
+
+    grid-column: 1 / span 2;
+    grid-row: 3 / span 1;
+}
+
+/* usando grid-area */
+.azul{
+    /* grid-area: linha inicial / coluna inicial / linha final / coluna final */
+    grid-area: 1 / 3 / 1 / 6;
+}
+
+.verde-escuro{
+    grid-area: 2 / 5 / 3 / 6;
+}
+
+.verde-claro{
+    grid-area: 1 / 1 / 3 / 3;
+}
+
+.marrom{
+    grid-area: 3 / 5 / 3 / 6;
+}
