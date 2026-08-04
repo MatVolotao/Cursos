@@ -1,0 +1,67 @@
+html {
+	font-size: 16px;
+}
+
+body {
+	margin: 0;
+	font-family: Arial, sans-serif;
+	line-height: 1.5;
+	background-color: #f4f7fb;
+	color: #1f2937;
+}
+
+h1 {
+	font-size: 2.5rem;
+	margin-bottom: 0.5em;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-bottom: 0.75em;
+}
+
+p,
+li {
+	font-size: 1rem;
+}
+
+/* rem usa a raiz do documento como referência.
+   Use quando quiser consistência geral e fácil ajuste de escala no site inteiro. */
+/* em usa o tamanho do elemento pai como referência.
+   Use quando o componente deve crescer ou encolher junto com o contexto local. */
+
+main {
+	/* O rem deixa esse bloco previsível, mesmo se uma seção interna mudar a fonte. */
+	max-width: 64rem;
+	margin: 0 auto;
+	padding: 1.25rem;
+	background-color: #ffffff;
+	border-radius: 0.75rem;
+	box-shadow: 0 0.5rem 1.5rem rgba(15, 23, 42, 0.08);
+}
+
+section + section {
+	margin-top: 1.5rem;
+}
+
+ul {
+	padding-left: 1.25em;
+}
+
+li + li {
+	margin-top: 0.5em;
+}
+
+picture {
+	display: block;
+	max-width: 64rem;
+	margin: 1.5rem auto 0;
+	padding: 0 1.25rem 1.5rem;
+}
+
+picture img {
+	width: 100%;
+	height: auto;
+	display: block;
+	border-radius: 0.75rem;
+}

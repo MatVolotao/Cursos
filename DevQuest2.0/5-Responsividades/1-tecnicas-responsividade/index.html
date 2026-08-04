@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Site Responsivo</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <main>
+        <section>
+            <h1>Título Principal do Site</h1>
+            <p>
+                Este conteúdo serve como base para estudos de responsividade. A ideia é observar
+                como o texto, os espaços e a imagem se adaptam em telas menores e maiores sem
+                perder legibilidade.
+            </p>
+        </section>
+
+        <section>
+            <h2>Tópicos para estudar</h2>
+            <ul>
+                <li>Medidas relativas para tipografia e espaçamento</li>
+                <li>Estrutura semântica com seções e listas</li>
+                <li>Imagens responsivas com a tag picture</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Como praticar</h2>
+            <p>
+                Teste aumentar e reduzir o zoom do navegador. Depois altere os valores de fonte
+                e padding no CSS para perceber a diferença entre medidas absolutas e relativas.
+            </p>
+        </section>
+    </main>
+
+    <picture>
+        <source media="(max-width: 600px)" srcset="images/batman-mobile.jpg" />
+        <source media="(max-width: 1024px)" srcset="images/batman-desktop.jpg" />
+        <img src="images/batman-desktop copy.jpg" alt="Imagem Responsiva" />
+    </picture>
+</body>
+
+</html>
