@@ -29,3 +29,19 @@ console.log(numero3 < numero4); // falso, porque 4 não é menor que "4"
 
 // <= - operador de menor ou igual
 console.log(numero3 <= numero4); // verdadeiro, porque 4 é menor ou igual a "4"
+
+// && (AND) - operador lógico E - verdadeiro se ambos os operandos forem verdadeiros
+const idade1 = 18;
+const idade2 = 20;
+
+console.log(idade1 >= 18 && idade2 >= 18); // verdadeiro, porque ambos os operandos são verdadeiros
+
+// || (OR) - operador lógico OU - verdadeiro se pelo menos um dos operandos for verdadeiro
+
+console.log(idade1 >= 18 || idade2 >= 18); // verdadeiro, porque pelo menos um dos operandos é verdadeiro
+
+
+// ! (NOT) - operador lógico NÃO - inverte o valor do operando
+const idade3 = 17;
+console.log(!(idade3 >= 18)); // verdadeiro, porque o valor de idade3 é menor que 18, e o operador ! inverte o valor
+
