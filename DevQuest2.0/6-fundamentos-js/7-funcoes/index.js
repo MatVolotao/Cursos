@@ -19,22 +19,20 @@ function mensagemPersonalizada(nome) {
 
 console.log(mensagemPersonalizada("Maria"));
 
-
 //funções anonimas
 // não tem hosting, ou seja, não podem ser chamadas antes de serem declaradas.
-const saudacaoAnonima = function() {
-    console.log("Olá, seja bem-vindo(a)!");
-}
+const saudacaoAnonima = function () {
+	console.log("Olá, seja bem-vindo(a)!");
+};
 
 saudacaoAnonima();
-//quando usar 
+//quando usar
 // Funções anônimas são úteis quando você precisa de uma função temporária ou quando a função é usada apenas uma vez. Elas também são frequentemente usadas em callbacks e em situações onde a função precisa ser passada como argumento para outra função.
-
-
 
 // arrow functions
 const saudacaoArrow = () => {
-    console.log("Olá, seja bem-vindo(a)!");
-}
+	console.log("Olá, seja bem-vindo(a)!");
+};
 //quando usar
 // Arrow functions são úteis para funções curtas e simples, especialmente quando você precisa de uma função como argumento para outra função. Elas também são frequentemente usadas em métodos de array, como map, filter e reduce. Além disso, arrow functions não possuem seu próprio contexto de "this", o que pode ser vantajoso em certos casos.
+
