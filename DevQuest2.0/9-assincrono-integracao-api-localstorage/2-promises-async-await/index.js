@@ -30,11 +30,24 @@ orderPizza()
 		console.error(error); // Falha ao preparar a pizza.
 	});
 
+const deliverPizza = () => {
+	return new Promise((resolve) => {
+		console.log("A pizza está a caminho...");
+
+		setTimeout(() => {
+			resolve("Pizza entregue!");
+		}, 3000);
+	});
+};
+
 // utilizando async/await
 
 const orderPizzaAsync = async () => {
 	const message = await orderPizza();
 	console.log(message); // Pizza pronta!
+
+	const deliverPizzaMessage = await deliverPizza();
+	console.log(deliverPizzaMessage);
 };
 
-orderPizzaAsync()
+orderPizzaAsync();
