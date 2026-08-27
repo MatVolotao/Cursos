@@ -1,0 +1,6 @@
+{
+    "name": "Superman",
+    "realName": "Clark Kent",
+    "powers": ["flight", "super strength", "x-ray vision"],
+    "universe": "DC"
+}
