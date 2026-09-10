@@ -7,16 +7,15 @@
 
 // Usamos a palavra-chave "type".
 
-type ID = string | number;
+type TypeAliasId = string | number;
 
-let usuarioId: ID;
+let usuarioTypeAliasId: TypeAliasId;
 
-usuarioId = 10;
-usuarioId = "ABC123";
+usuarioTypeAliasId = 10;
+usuarioTypeAliasId = "ABC123";
 
 // Erro:
 // usuarioId = true;
-
 
 // ==========================================
 // TYPE ALIAS COM OBJETO
@@ -25,33 +24,31 @@ usuarioId = "ABC123";
 // Podemos criar um tipo que representa
 // a estrutura de um objeto.
 
-type Usuario = {
+type UsuarioTypeAlias = {
 	nome: string;
 	idade: number;
 	email: string;
 };
 
-const usuario1: Usuario = {
+const usuarioTypeAlias1: UsuarioTypeAlias = {
 	nome: "Beto",
 	idade: 20,
-	email: "beto@email.com"
+	email: "beto@email.com",
 };
 
-console.log(usuario1);
-
+console.log(usuarioTypeAlias1);
 
 // ==========================================
 // REUTILIZANDO O MESMO TIPO
 // ==========================================
 
-const usuario2: Usuario = {
+const usuarioTypeAlias2: UsuarioTypeAlias = {
 	nome: "Ana",
 	idade: 25,
-	email: "ana@email.com"
+	email: "ana@email.com",
 };
 
-console.log(usuario2);
-
+console.log(usuarioTypeAlias2);
 
 // ==========================================
 // TYPE ALIAS EM FUNÇÕES
@@ -60,48 +57,45 @@ console.log(usuario2);
 // Podemos usar o Type Alias
 // como tipo de um parâmetro.
 
-function mostrarUsuario(usuario: Usuario): void {
+function mostrarUsuarioComTypeAlias(usuario: UsuarioTypeAlias): void {
 	console.log(`Nome: ${usuario.nome}`);
 	console.log(`Idade: ${usuario.idade}`);
 	console.log(`Email: ${usuario.email}`);
 }
 
-mostrarUsuario(usuario1);
-
+mostrarUsuarioComTypeAlias(usuarioTypeAlias1);
 
 // ==========================================
 // TYPE ALIAS COM UNION
 // ==========================================
 
-type StatusPedido = "pendente" | "pago" | "cancelado";
+type StatusPedidoTypeAlias = "pendente" | "pago" | "cancelado";
 
-let statusAtual: StatusPedido;
+let statusAtualTypeAlias: StatusPedidoTypeAlias;
 
-statusAtual = "pendente";
-statusAtual = "pago";
+statusAtualTypeAlias = "pendente";
+statusAtualTypeAlias = "pago";
 
 // Erro:
-// statusAtual = "enviado";
-
+// statusAtualTypeAlias = "enviado";
 
 // ==========================================
 // OUTRO EXEMPLO COM OBJETO
 // ==========================================
 
-type Produto = {
+type ProdutoTypeAlias = {
 	nome: string;
 	preco: number;
 	disponivel: boolean;
 };
 
-const produto: Produto = {
+const produtoTypeAlias: ProdutoTypeAlias = {
 	nome: "Teclado",
 	preco: 250,
-	disponivel: true
+	disponivel: true,
 };
 
-console.log(produto);
-
+console.log(produtoTypeAlias);
 
 // ==========================================
 // RESUMO

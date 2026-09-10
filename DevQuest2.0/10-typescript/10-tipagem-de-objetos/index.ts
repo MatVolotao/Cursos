@@ -5,35 +5,33 @@
 // Podemos definir quais propriedades
 // um objeto deve possuir e o tipo de cada uma.
 
-let usuario: {
+let usuarioComTipagemDireta: {
 	nome: string;
 	idade: number;
 };
 
-usuario = {
+usuarioComTipagemDireta = {
 	nome: "Beto",
-	idade: 20
+	idade: 20,
 };
 
-console.log(usuario);
-
+console.log(usuarioComTipagemDireta);
 
 // ==========================================
 // TIPAGEM DIRETA NO OBJETO
 // ==========================================
 
-const produto: {
+const produtoComTipagemDireta: {
 	nome: string;
 	preco: number;
 	disponivel: boolean;
 } = {
 	nome: "Teclado",
 	preco: 250,
-	disponivel: true
+	disponivel: true,
 };
 
-console.log(produto);
-
+console.log(produtoComTipagemDireta);
 
 // ==========================================
 // PROPRIEDADES OPCIONAIS
@@ -50,33 +48,28 @@ let cliente: {
 
 cliente = {
 	nome: "Ana",
-	idade: 25
+	idade: 25,
 };
 
 cliente = {
 	nome: "Carlos",
 	idade: 30,
-	email: "carlos@email.com"
+	email: "carlos@email.com",
 };
-
 
 // ==========================================
 // OBJETO COMO PARÂMETRO DE FUNÇÃO
 // ==========================================
 
-function mostrarUsuario(usuario: {
-	nome: string;
-	idade: number;
-}): void {
+function mostrarUsuarioComTipagemDireta(usuario: { nome: string; idade: number }): void {
 	console.log(`Nome: ${usuario.nome}`);
 	console.log(`Idade: ${usuario.idade}`);
 }
 
-mostrarUsuario({
+mostrarUsuarioComTipagemDireta({
 	nome: "Beto",
-	idade: 20
+	idade: 20,
 });
-
 
 // ==========================================
 // OBJETOS DENTRO DE OBJETOS
@@ -92,12 +85,11 @@ const pessoa: {
 	nome: "Beto",
 	endereco: {
 		cidade: "São Paulo",
-		estado: "SP"
-	}
+		estado: "SP",
+	},
 };
 
 console.log(pessoa.endereco.cidade);
-
 
 // ==========================================
 // USANDO TYPE ALIAS
@@ -106,26 +98,25 @@ console.log(pessoa.endereco.cidade);
 // Quando a estrutura é reutilizada,
 // podemos criar um Type Alias.
 
-type Usuario = {
+type UsuarioTipado = {
 	nome: string;
 	idade: number;
 	email?: string;
 };
 
-const usuario1: Usuario = {
+const usuarioTipado1: UsuarioTipado = {
 	nome: "Beto",
-	idade: 20
+	idade: 20,
 };
 
-const usuario2: Usuario = {
+const usuarioTipado2: UsuarioTipado = {
 	nome: "Ana",
 	idade: 25,
-	email: "ana@email.com"
+	email: "ana@email.com",
 };
 
-console.log(usuario1);
-console.log(usuario2);
-
+console.log(usuarioTipado1);
+console.log(usuarioTipado2);
 
 // ==========================================
 // RESUMO
