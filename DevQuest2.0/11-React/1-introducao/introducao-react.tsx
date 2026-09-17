@@ -1,73 +1,48 @@
-// ==========================================
-// VITE X CREATE REACT APP
-// ==========================================
-
-// CREATE REACT APP (CRA)
-// -> ferramenta antiga para criar projetos React
-// -> utilizava ferramentas como Babel e Webpack
-// -> atualmente não é recomendado para novos projetos
-
-// Antigamente:
-// npx create-react-app meu-projeto
-
+// 01-introducao-react.tsx
 
 // ==========================================
-// VITE
+// INTRODUÇÃO AO REACT
 // ==========================================
 
-// Vite é uma ferramenta moderna para
-// desenvolvimento e build de aplicações.
+// React é uma biblioteca JavaScript utilizada
+// para criar interfaces de usuário.
 
-// Principais vantagens:
-// -> inicialização rápida
-// -> HMR (atualização rápida durante desenvolvimento)
-// -> configuração simples
-// -> suporte a React + TypeScript
+// A interface é dividida em componentes
+// pequenos e reutilizáveis.
 
-// Criando projeto:
-//
-// npm create vite@latest
-//
-// Escolher:
-// React
-// TypeScript
+function Saudacao() {
+	return <h1>Olá, React!</h1>;
+}
+
+function Botao() {
+	return <button>Clique aqui</button>;
+}
 
 
 // ==========================================
-// EXECUTANDO PROJETO VITE
+// JSX
 // ==========================================
 
-// Instalar dependências:
-//
-// npm install
+// JSX permite escrever uma estrutura parecida
+// com HTML dentro do JavaScript/TypeScript.
 
-// Iniciar servidor:
-//
-// npm run dev
+const nome = "Matheus";
 
-
-// ==========================================
-// BABEL X WEBPACK
-// ==========================================
-
-// Babel:
-// -> transforma código JavaScript/JSX
-
-// Webpack:
-// -> empacota os módulos e arquivos do projeto
-
-// Eram muito associados ao Create React App.
+function Usuario() {
+	return <p>Olá, {nome}!</p>;
+}
 
 
 // ==========================================
-// EXEMPLO DE COMPONENTE REACT
+// COMPONENTIZAÇÃO
 // ==========================================
 
 function App() {
 	return (
 		<>
-			<h1>React com Vite</h1>
-			<p>Meu primeiro projeto React + TypeScript.</p>
+			<Saudacao />
+			<Usuario />
+			<Botao />
 		</>
 	);
 }
@@ -76,15 +51,32 @@ export default App;
 
 
 // ==========================================
+// VIRTUAL DOM
+// ==========================================
+
+// Fluxo simplificado:
+//
+// Dados mudam
+//      ↓
+// React gera uma nova representação
+//      ↓
+// Diffing
+// Compara com a representação anterior
+//      ↓
+// Reconciliação
+//      ↓
+// Atualiza o necessário no DOM real
+
+
+// ==========================================
 // RESUMO
 // ==========================================
 
-// Create React App
-// -> solução mais antiga
-// -> não recomendado para novos projetos
-
-// Vite
-// -> solução moderna
-// -> rápido
-// -> simples
-// -> ótimo para React + TypeScript
+// React:
+// -> biblioteca JavaScript
+// -> cria interfaces
+// -> trabalha com componentes
+// -> utiliza JSX
+// -> possui abordagem declarativa
+// -> reutiliza componentes
+// -> atualiza a interface quando os dados mudam
