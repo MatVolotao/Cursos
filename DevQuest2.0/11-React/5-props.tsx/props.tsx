@@ -1,14 +1,11 @@
-// 05-props.tsx
+// 06-props-default-children.tsx
 
 // ==========================================
 // PROPS
 // ==========================================
 
-// Props são valores enviados de um componente
-// pai para um componente filho.
-
-// Funcionam de forma parecida com parâmetros
-// de uma função.
+// Props são valores enviados de um componente pai
+// para um componente filho.
 
 type UsuarioProps = {
 	nome: string;
@@ -25,36 +22,50 @@ function Usuario({ nome, idade }: UsuarioProps) {
 
 
 // ==========================================
-// PROP OPCIONAL
+// PROP OPCIONAL + VALOR DEFAULT
 // ==========================================
 
-type ProdutoProps = {
-	nome: string;
-	preco: number;
-	disponivel?: boolean;
+// O ? torna a prop opcional.
+// Se description não for enviada,
+// será usado o valor padrão.
+
+type TaskProps = {
+	description?: string;
 };
 
-function Produto({
-	nome,
-	preco,
-	disponivel = true
-}: ProdutoProps) {
+function NewTask({
+	description = "Nenhuma tarefa digitada",
+}: TaskProps) {
+	return <p>Tarefa: {description}</p>;
+}
+
+
+// ==========================================
+// CHILDREN
+// ==========================================
+
+// children também é uma prop.
+// Ela recebe tudo que estiver entre
+// <Cartao> e </Cartao>.
+
+type CardProps = {
+	titulo: string;
+	children: React.ReactNode;
+};
+
+function Cartao({ titulo, children }: CardProps) {
 	return (
 		<div>
-			<h2>{nome}</h2>
+			<h2>{titulo}</h2>
 
-			<p>R$ {preco}</p>
-
-			<p>
-				{disponivel ? "Disponível" : "Indisponível"}
-			</p>
+			{children}
 		</div>
 	);
 }
 
 
 // ==========================================
-// COMPONENTE PAI
+// USANDO OS COMPONENTES
 // ==========================================
 
 function App() {
@@ -65,21 +76,15 @@ function App() {
 				idade={29}
 			/>
 
-			<Usuario
-				nome="Alice"
-				idade={23}
-			/>
+			<NewTask description="Estudar React" />
 
-			<Produto
-				nome="Mouse"
-				preco={150}
-			/>
+			{/* Usa o valor default */}
+			<NewTask />
 
-			<Produto
-				nome="Teclado"
-				preco={250}
-				disponivel={false}
-			/>
+			<Cartao titulo="Minhas tarefas">
+				<NewTask description="Revisar props" />
+				<NewTask description="Estudar children" />
+			</Cartao>
 		</>
 	);
 }
@@ -93,8 +98,14 @@ export default App;
 
 // Props:
 // -> enviam dados para componentes
-// -> funcionam como parâmetros
-// -> tornam componentes reutilizáveis
-// -> podem ser tipadas com TypeScript
-// -> podem ser opcionais
-// -> são somente leitura
+
+// Prop opcional:
+// -> usa ?
+
+// Valor default:
+// -> usado quando a prop não é enviada
+
+// children:
+// -> também é uma prop
+// -> recebe o conteúdo entre as tags
+// -> normalmente usa React.ReactNode
